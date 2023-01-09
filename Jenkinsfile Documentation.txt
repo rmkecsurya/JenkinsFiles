@@ -1,0 +1,70 @@
+//Email without attachment
+pipeline{
+    agent any
+        stages{
+            stage('build stage'){
+                steps{
+                    echo 'build completed'
+                }
+            }
+            stage('Email Notification'){
+                steps{
+                mail bcc: '', body: '''Hi Team,
+     Please find the report for the build status''', cc: '', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+            }
+            }
+        }
+}
+
+
+
+//Email With attachment
+
+
+
+//Patch Silent Installation
+pipeline{
+    agent any
+        stages{
+            stage('build stage'){
+                steps{
+                    echo 'build completed'
+                }
+            }
+            stage('PatchInstallation'){
+                steps{
+                bat 'cd C:/Users/Surya/Downloads/04-01-2023'
+                bat 'echo env.PATH'
+                bat 'Install.exe /s /v" INSTALLDIR=C:/Users/Surya/Downloads/04-01-2023"'
+            }
+            }
+        }
+}
+
+// To invoke Another job in a pipeline
+stage ('Invoke_pipelineA') {
+            steps {
+                build job: 'pipelineA', parameters: [
+                string(name: 'param1', value: "value1")
+                ]
+            }
+        }
+		
+		
+		
+		
+		
+
+Issues got
+script returned exit code 1619
+While installing through jenkins log files in temp is not created
+
+
+
+Challenges Faced:
+Required MSI files or to be installed files should be in the Job working directory  --- > For 2 job Patch and Media should be placed separately
+Patch Installing is failed due to Admin rights (To be Overcome)
+
+
+Troubleshooting:
+If installation got issue restart/start the windowsinstaller in services

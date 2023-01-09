@@ -1,0 +1,9 @@
+It supports atomic commits
+It supports Internationalized program message.
+It provides file locking for the files that cannot be merged.
+It provides versioning of symbolic links.
+It supports path-based authorization.
+
+
+
+It is same as TFS i,e Even TFS is stored in our database Whether SVN also store data in our database or like GIT it has own Server.
