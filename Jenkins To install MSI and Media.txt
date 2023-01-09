@@ -21,9 +21,9 @@ pipeline{
 
 
 
-//Create a job called installMSI
+//Create a job called installMSI and add the WindowsBatchCommand
 MSiexec /i "Epiplex500 R11.0 Capture and Developer Complete.msi" /qn
 
 
-//Create a job called msiPatchInstallation
+//Create a job called msiPatchInstallation and add the WindowsBatchCommand
 Msiexec /i "Epiplex500_PatchInstaller11.1.msi" /qn DSHCUT="1" /norestart
