@@ -58,6 +58,7 @@ stage ('Invoke_pipelineA') {
 Issues got
 script returned exit code 1619
 While installing through jenkins log files in temp is not created
+If we checkout an empty .svn file is created in the directory if files contained folder checkout then the directory is created.
 
 
 
