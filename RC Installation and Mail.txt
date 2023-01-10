@@ -1,0 +1,20 @@
+pipeline{
+    agent any
+    stages{
+        stage("Sample"){
+            steps{
+                bat '''
+                cd C:/Users/Surya/Downloads/09-01-2023
+                MSiexec /i "Epiplex500 Remote Capture Client 11.1.msi" /qn
+                '''
+                mail bcc: '', body: '''Hi Team,
+                RC MSI Media installed successfully
+				
+				With Regards,
+				Surya N
+				Devops Teams
+				Epiance Software Pvt Ltd''', cc:'suryanagaraj.gp@gmail.com', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+            }
+        }
+    }
+}

@@ -63,7 +63,7 @@ If we checkout an empty .svn file is created in the directory if files contained
 
 
 Challenges Faced:
-Required MSI files or to be installed files should be in the Job working directory  --- > For 2 job Patch and Media should be placed separately
+Required MSI files or to be installed files should be in the Job working directory  --- > For 2 job Patch and Media should be placed separately  ----> This can be overcome by using multi line comment ''' ''' in jenkins
 Patch Installing is failed due to Admin rights (To be Overcome)
 
 
