@@ -1,0 +1,52 @@
+pipeline{
+    agent any
+    stages{
+        stage("MSI Installation"){
+            steps{
+                bat '''
+                    cd /D E:/Desktop/Software/Desktop Media/11.1
+                    MSiexec /i "Epiplex500 R11.0 Capture and Developer Complete.msi" /qn
+                    
+                '''
+            }
+            post{
+            success{
+                script{
+                    mail bcc: '', body: '''Hi Team,
+     MSI Media installed successfully''', cc: '', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+                }
+            }
+            failure{
+                script{
+                mail bcc: '', body: '''Hi Team,
+     MSI Media Installation failed''', cc: '', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+                }
+            }
+        }
+        }
+        stage("MSI Patch Installation"){
+            steps{
+                bat '''
+                    cd /D E:/Desktop/Software/Desktop Media/11.1
+                    Msiexec /i "Epiplex500_PatchInstaller11.1.msi" /qn DSHCUT="1" /norestart
+                    
+                '''
+            }
+            post{
+            success{
+                script{
+                    mail bcc: '', body: '''Hi Team,
+     MSI Patch installed successfully''', cc: '', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+                }
+            }
+            failure{
+                script{
+                mail bcc: '', body: '''Hi Team,
+     MSI Patch Installation failed''', cc: '', from: '', replyTo: '', subject: 'Jenkins Status', to: 'surya.n@epiance.com'
+                }
+            }
+        }
+        }
+        
+    }
+}
