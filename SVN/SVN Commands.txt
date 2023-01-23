@@ -1,0 +1,14 @@
+SVN Commands and Usages
+
+SVN import   - > It recursively sends the files to svn repo url
+    svn import [PATH] URL
+	command : svn import -m "My firat import" [path] [repoURL]
+	If you want the folder to be send to the repository, then add the folder name at the end of the url eg svn import [PATH] URL\folderName
+		
+SVN remove   -> To remove a file
+     svn remove -m "Ideleted this file" https://EPNCL063.epiance.com/svn/FirstJavaRepo/sample.txt
+	
+SVN checkout  --> The svn checkout command checks out a working copy from the repository. This command is sometimes shortened to svn co.
+     svn checkout [URL]
+	 svn co [URL]
+
