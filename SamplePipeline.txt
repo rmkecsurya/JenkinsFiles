@@ -68,7 +68,7 @@ pipeline{
             steps{
                 git credentialsId: '2846c9f7-783a-4749-9abb-d52965993e99',
                     url : 'https://github.com/rmkecsurya/javarepo2.git'
-                bat 'python hello.py
+                bat 'python hello.py'
             }
         }
     }
