@@ -3,6 +3,9 @@ pipeline{
 		PROJECT_NAME = "Surya"     //Can be used in the whole pipeline
 	}
     agent any
+	agent {
+		label 'my-defined-agent'
+	}
     stages{
         stage("Sample"){
 			environment{
